@@ -39,5 +39,5 @@ Connect the 2D layout to the capacity calculator for full integration.
 👩‍🚀 Team
 
 Project advisor: Nilton Machado
-Developed by students: Erin Otero, Kimi Kauan, Lavínia Lamarca, and Giovana Bergamin
+Developed by students: Mateus Lemos Nogueira, Gael Lira Moreno and Breno Barrios.
 
