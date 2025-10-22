@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space Habitats</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="wrap">
+    <h1>Space Habitats</h1>
+    <p>Escolha a forma do habitat, ajuste as medidas e veja os resultados.</p>
+
+    <!-- Escolha da forma -->
+    <section class="card">
+      <h2>Forma do habitat</h2>
+      <label>
+        <span>Forma:</span>
+        <select id="shape">
+          <option value="cylinder">Cilindro (raio r, altura h)</option>
+          <option value="torus">Toro (rosquinha: R e r)</option>
+          <option value="capsule">Cápsula inflável (raio r, parte reta h)</option>
+        </select>
+      </label>
+
+      <!-- Entradas variam conforme a forma -->
+      <div class="grid">
+        <label id="lbl_r">r (m)
+          <input id="in_r" type="number" min="1" step="0.1" value="5" />
+        </label>
+        <label id="lbl_h">h (m)
+          <input id="in_h" type="number" min="1" step="0.1" value="10" />
+        </label>
+        <label id="lbl_R" class="opt">R (m) — raio maior do toro
+          <input id="in_R" type="number" min="1" step="0.1" value="15" />
+        </label>
+        <label>
+          m³ por pessoa (conforto)
+          <input id="in_m3pp" type="number" min="5" step="1" value="40" />
+        </label>
+      </div>
+
+      <!-- Presets rápidos -->
+      <div class="presets">
+        <button data-preset="cylinder">Preset Cilindro</button>
+        <button data-preset="torus">Preset Toro</button>
+        <button data-preset="capsule">Preset Cápsula</button>
+      </div>
+    </section>
+
+    <!-- Resultados numéricos -->
+    <section class="card">
+      <h2>Resultados</h2>
+      <div class="results">
+        <p><b>Volume útil (m³):</b> <span id="out_vol">—</span></p>
+        <p><b>Área de piso (m²):</b> <span id="out_floor">—</span></p>
+        <p><b>Capacidade estimada (pessoas):</b> <span id="out_cap">—</span></p>
+        <small>Estimativas educativas. Projetos reais usam critérios mais complexos.</small>
+      </div>
+    </section>
+
+    <!-- Visualização (SVG gerado via JS) -->
+    <section class="card">
+      <h2>Visual (não está em escala real)</h2>
+      <p class="hint">O quadro abaixo é um <b>SVG</b> (gráfico vetorial). O JavaScript desenha as formas aqui — não há imagem externa.</p>
+      <svg id="viz" viewBox="0 0 400 200" aria-label="Pré-visualização do habitat" role="img">
+        <!-- O JavaScript desenhará aqui -->
+      </svg>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
